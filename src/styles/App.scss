@@ -1,0 +1,247 @@
+/* Base Application Styles */
+/*public*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input
+{margin: 0;padding: 0;}
+body{font-size: 12px;font-family: "微软雅黑";}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;border: none;background: none;}
+textarea{resize: none;}
+a{text-decoration: none;color: white;}
+.clearfix:before,.clearfix:after { content:""; display:table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+#app{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+/*keyframe*/
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes rotate {
+    from{
+        transform: rotateZ(0);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
+/*SideBar*/
+.sideBar{
+    position:absolute;
+    width: 300px;
+    height: 100%;
+    background-color: #972D4D;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    img{
+        width: 300px;
+        height: 250px;
+    }
+    
+    li:nth-child(1){
+        height: 250px;
+        margin-bottom: 50px;
+    }
+    li{
+        height: 65px;
+        text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    }
+    a{
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        font-size: 25px;
+        color: #ffffcc;
+        font-family: "arial black";
+        text-indent: 3em;
+    }
+    .followMe{
+        position: absolute;
+        top: calc(100% - 45px);
+        a{
+        font-size: 13px;
+        color: #FFF;
+        text-indent: 4em;
+        width: 300px;
+        background-color: #ca6262;
+        line-height: 45px;
+        box-shadow: -5px 0 5px rgba(255,255,255,0.5);
+        }
+    }
+}
+/*rightArea*/
+.rightArea{
+    width: calc( 100% - 300px );
+    height: 100%;
+    background-color: #eba877;
+}
+/*welcome page*/
+.welcome{
+    position: relative;
+    width: 320px;
+    left: 50%;
+    top: 300px;
+    color: #FFF;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+.path{
+     stroke-dasharray: 1000;
+     stroke-dashoffset: 1000;
+     animation: dash 5s 1s linear infinite;
+}
+.path2{
+     stroke-dasharray: 1000;
+     stroke-dashoffset: 1000;
+     animation: dash 5s 3s linear infinite;
+}
+.github{
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 180px;
+    width: 30px;
+    height: 30px;
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
+/*todolist*/
+.todoTitle{
+    width: 150px;
+    margin: 40px auto 40px;
+    font-size: 50px;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid #FFF;
+    border-radius: 4px;
+}
+.todoInput{
+    width: 500px;
+    font-size: 20px;
+    color: #FFF;
+    height: auto;
+    margin: 0 auto;
+    border: 3px solid #FFF;
+    border-radius: 4px;
+    input{
+        width: 500px;
+        padding: 10px 0 10px 10px;
+        box-sizing: border-box;
+    }
+}
+.todoList{
+    width: 600px;
+    height: auto;
+    color: #FFF;
+    font-size: 20px;
+    margin: 0 auto;
+    #todoBox::-webkit-scrollbar-thumb{
+            background-color: #FFF;
+            border-radius: 10px;
+    }
+    #todoBox::-webkit-scrollbar{
+        width: 20px;
+    }
+    ul{
+        margin-top: 10px;
+        height: 300px;
+        overflow-y: auto;
+        &::-webkit-scrollbar-thumb{
+            background-color: yellow;
+        }
+    }
+    li{
+        float: none;
+        margin: 10px auto 10px;
+        padding: 10px;
+        text-indent: 2em;
+        .delet{
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            img{
+                width: 20px;
+                height: 20px;
+                vertical-align: calc(-3px);
+            }
+        }
+    }
+}
+.quote{
+    width: 450px;
+    margin: 35px auto 0;
+    font-size: 18px;
+    color: #FFF;
+    text-shadow: 10px 10px 5px #000;
+    
+}
+/*calendar*/
+.calendar{
+    width: 800px;
+    margin: 50px auto 30px;
+}
+.time{
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 280px;
+    margin: 50px auto 0;
+    font-family: "微软雅黑" !important;
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: -5px 1px 3px rgba(0,0,0,0.6);
+}
+/*record*/
+.record{
+    width: 400px;
+    height: 400px;
+    margin: 50px auto 50px;
+    color: white;
+    img{
+        position: relative;
+        z-index: 10;
+        width: 400px;
+        height: 400px;
+        animation: rotate 5s linear infinite;
+        animation-play-state: paused;
+    }
+    .play{
+        animation-play-state: running;
+    }
+    .words{
+        position: relative;
+        width: 400px;
+        height: 400px;
+        top: -100%;
+        left: 0;
+        font-size: 350px;
+    }
+}
+.music{
+        width: 305px;
+        margin: 0 auto;
+    }
+    
+    
+/*Allend*/

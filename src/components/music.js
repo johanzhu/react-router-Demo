@@ -3,9 +3,6 @@ require('styles/App.scss');
 
 
 import React from 'react';
-let musicImg = require('../images/唱片.svg');
-let musicFil = require('../music/yinyue.mp3');
-
 
 class music extends React.Component {
   constructor(props){
@@ -36,10 +33,10 @@ class music extends React.Component {
     return (
       <div>
          <div className="record">
-          <img className={musicPlay} src={musicImg} />
+          <img className={musicPlay} src='./images/唱片.svg' />
           </div>
           <div className='music'>
-          <audio ref='musicBox'src={musicFil} controls="controls" loop='loop'>
+          <audio ref='musicBox'src='./music/yinyue.mp3' controls="controls" loop='loop'>
            Your browser does not support the audio element.
           </audio>
           </div>
